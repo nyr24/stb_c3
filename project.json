@@ -1,0 +1,32 @@
+{
+  "langrev": "1",
+  "warnings": [ "no-unused" ],
+  "dependencies": [ ],
+  "authors": [ "Nyr24" ],
+  "version": "0.1.0",
+  "sources": [ "src/**" ],
+  "test-sources": [ "test/**" ],
+  "c-sources": [ "src/**" ],
+  "c-include-dirs": [ "src/" ],
+  "build-dir": "build",
+  "output": "build",
+  "targets": {
+    "stb_c3": {
+      "type": "static-lib",
+      "opt": "O3"
+    },
+    "stb_c3_debug": {
+      "type": "static-lib",
+      "opt": "O0"
+    },
+    "stb_c3_dyn": {
+      "type": "dynamic-lib",
+      "opt": "O0"
+    },
+    "stb_c3_dyn_debug": {
+      "type": "dynamic-lib",
+      "opt": "O3"
+    },
+  },
+  "cpu": "generic",
+}
