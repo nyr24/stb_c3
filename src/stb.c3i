@@ -11,7 +11,7 @@ const CUInt RGB_ALPHA  = 4;
 alias StbiUc = char;
 alias StbiUs = CUShort;
 
-alias UnnamedPFN1 @private = fn CInt(void* user, CChar* data, CInt size);
+alias UnnamedPFN1 @private = fn CInt(void* user, ZString data, CInt size);
 
 alias UnnamedPFN2 @private = fn void(void* user, CInt n);
 
@@ -42,7 +42,7 @@ fn StbiUc* load_from_callbacks(
 	CInt desired_channels
 ) @extern("stbi_load_from_callbacks");
 
-fn StbiUc* load(CChar* filename, CInt* x, CInt* y, CInt* channels_in_file, CInt desired_channels) @extern("stbi_load");
+fn StbiUc* load(ZString filename, CInt* x, CInt* y, CInt* channels_in_file, CInt desired_channels) @extern("stbi_load");
 
 fn StbiUc* load_from_file(
 	File* f,
@@ -82,7 +82,7 @@ fn StbiUs* load_16_from_callbacks(
 ) @extern("stbi_load_16_from_callbacks");
 
 fn StbiUs* load_16(
-	CChar* filename,
+	ZString filename,
 	CInt* x,
 	CInt* y,
 	CInt* channels_in_file,
@@ -115,7 +115,7 @@ fn float* loadf_from_callbacks(
 	CInt desired_channels
 ) @extern("stbi_loadf_from_callbacks");
 
-fn float* loadf(CChar* filename, CInt* x, CInt* y, CInt* channels_in_file, CInt desired_channels) @extern("stbi_loadf");
+fn float* loadf(ZString filename, CInt* x, CInt* y, CInt* channels_in_file, CInt desired_channels) @extern("stbi_loadf");
 
 fn float* loadf_from_file(
 	File* f,
@@ -137,7 +137,7 @@ fn CInt is_hdr_from_callbacks(StbiIoCallbacks* clbk, void* user) @extern("stbi_i
 
 fn CInt is_hdr_from_memory(StbiUc* buffer, CInt len) @extern("stbi_is_hdr_from_memory");
 
-fn CInt is_hdr(CChar* filename) @extern("stbi_is_hdr");
+fn CInt is_hdr(ZString filename) @extern("stbi_is_hdr");
 
 fn CInt is_hdr_from_file(File* f) @extern("stbi_is_hdr_from_file");
 
@@ -161,11 +161,11 @@ fn CInt is_16_bit_from_memory(StbiUc* buffer, CInt len) @extern("stbi_is_16_bit_
 
 fn CInt is_16_bit_from_callbacks(StbiIoCallbacks* clbk, void* user) @extern("stbi_is_16_bit_from_callbacks");
 
-fn CInt info(CChar* filename, CInt* x, CInt* y, CInt* comp) @extern("stbi_info");
+fn CInt info(ZString filename, CInt* x, CInt* y, CInt* comp) @extern("stbi_info");
 
 fn CInt info_from_file(File* f, CInt* x, CInt* y, CInt* comp) @extern("stbi_info_from_file");
 
-fn CInt is_16_bit(CChar* filename) @extern("stbi_is_16_bit");
+fn CInt is_16_bit(ZString filename) @extern("stbi_is_16_bit");
 
 fn CInt is_16_bit_from_file(File* f) @extern("stbi_is_16_bit_from_file");
 
@@ -187,34 +187,34 @@ fn void set_flip_vertically_on_load_thread(
 	CInt flag_true_if_should_flip
 ) @extern("stbi_set_flip_vertically_on_load_thread");
 
-fn CChar* zlib_decode_malloc_guesssize(
-	CChar* buffer,
+fn ZString zlib_decode_malloc_guesssize(
+	ZString buffer,
 	CInt len,
 	CInt initial_size,
 	CInt* outlen
 ) @extern("stbi_zlib_decode_malloc_guesssize");
 
-fn CChar* zlib_decode_malloc_guesssize_headerflag(
-	CChar* buffer,
+fn ZString zlib_decode_malloc_guesssize_headerflag(
+	ZString buffer,
 	CInt len,
 	CInt initial_size,
 	CInt* outlen,
 	CInt parse_header
 ) @extern("stbi_zlib_decode_malloc_guesssize_headerflag");
 
-fn CChar* zlib_decode_malloc(CChar* buffer, CInt len, CInt* outlen) @extern("stbi_zlib_decode_malloc");
+fn ZString zlib_decode_malloc(ZString buffer, CInt len, CInt* outlen) @extern("stbi_zlib_decode_malloc");
 
-fn CInt zlib_decode_buffer(CChar* obuffer, CInt olen, CChar* ibuffer, CInt ilen) @extern("stbi_zlib_decode_buffer");
+fn CInt zlib_decode_buffer(ZString obuffer, CInt olen, ZString ibuffer, CInt ilen) @extern("stbi_zlib_decode_buffer");
 
-fn CChar* zlib_decode_noheader_malloc(
-	CChar* buffer,
+fn ZString zlib_decode_noheader_malloc(
+	ZString buffer,
 	CInt len,
 	CInt* outlen
 ) @extern("stbi_zlib_decode_noheader_malloc");
 
 fn CInt zlib_decode_noheader_buffer(
-	CChar* obuffer,
+	ZString obuffer,
 	CInt olen,
-	CChar* ibuffer,
+	ZString ibuffer,
 	CInt ilen
 ) @extern("stbi_zlib_decode_noheader_buffer");

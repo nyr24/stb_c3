@@ -981,7 +981,7 @@ STBIDEF const char *stbi_failure_reason(void)
 }
 
 #ifndef STBI_NO_FAILURE_STRINGS
-static int stbi__err(const char *str)
+int stbi__err(const char *str)
 {
    stbi__g_failure_reason = str;
    return 0;
