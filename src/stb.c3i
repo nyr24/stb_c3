@@ -31,7 +31,7 @@ fn StbiUc* load_from_memory(
 	CInt* y,
 	CInt* channels_in_file,
 	CInt desired_channels
-) @extern("stbi_load_from_memory");
+) @cname("stbi_load_from_memory");
 
 fn StbiUc* load_from_callbacks(
 	StbiIoCallbacks* clbk,
@@ -40,9 +40,9 @@ fn StbiUc* load_from_callbacks(
 	CInt* y,
 	CInt* channels_in_file,
 	CInt desired_channels
-) @extern("stbi_load_from_callbacks");
+) @cname("stbi_load_from_callbacks");
 
-fn StbiUc* load(ZString filename, CInt* x, CInt* y, CInt* channels_in_file, CInt desired_channels) @extern("stbi_load");
+fn StbiUc* load(ZString filename, CInt* x, CInt* y, CInt* channels_in_file, CInt desired_channels) @cname("stbi_load");
 
 fn StbiUc* load_from_file(
 	File* f,
@@ -50,7 +50,7 @@ fn StbiUc* load_from_file(
 	CInt* y,
 	CInt* channels_in_file,
 	CInt desired_channels
-) @extern("stbi_load_from_file");
+) @cname("stbi_load_from_file");
 
 fn StbiUc* load_gif_from_memory(
 	StbiUc* buffer,
@@ -61,7 +61,7 @@ fn StbiUc* load_gif_from_memory(
 	CInt* z,
 	CInt* comp,
 	CInt req_comp
-) @extern("stbi_load_gif_from_memory");
+) @cname("stbi_load_gif_from_memory");
 
 fn StbiUs* load_16_from_memory(
 	StbiUc* buffer,
@@ -70,7 +70,7 @@ fn StbiUs* load_16_from_memory(
 	CInt* y,
 	CInt* channels_in_file,
 	CInt desired_channels
-) @extern("stbi_load_16_from_memory");
+) @cname("stbi_load_16_from_memory");
 
 fn StbiUs* load_16_from_callbacks(
 	StbiIoCallbacks* clbk,
@@ -79,7 +79,7 @@ fn StbiUs* load_16_from_callbacks(
 	CInt* y,
 	CInt* channels_in_file,
 	CInt desired_channels
-) @extern("stbi_load_16_from_callbacks");
+) @cname("stbi_load_16_from_callbacks");
 
 fn StbiUs* load_16(
 	ZString filename,
@@ -87,7 +87,7 @@ fn StbiUs* load_16(
 	CInt* y,
 	CInt* channels_in_file,
 	CInt desired_channels
-) @extern("stbi_load_16");
+) @cname("stbi_load_16");
 
 fn StbiUs* load_from_file_16(
 	File* f,
@@ -95,7 +95,7 @@ fn StbiUs* load_from_file_16(
 	CInt* y,
 	CInt* channels_in_file,
 	CInt desired_channels
-) @extern("stbi_load_from_file_16");
+) @cname("stbi_load_from_file_16");
 
 fn float* loadf_from_memory(
 	StbiUc* buffer,
@@ -104,7 +104,7 @@ fn float* loadf_from_memory(
 	CInt* y,
 	CInt* channels_in_file,
 	CInt desired_channels
-) @extern("stbi_loadf_from_memory");
+) @cname("stbi_loadf_from_memory");
 
 fn float* loadf_from_callbacks(
 	StbiIoCallbacks* clbk,
@@ -113,9 +113,9 @@ fn float* loadf_from_callbacks(
 	CInt* y,
 	CInt* channels_in_file,
 	CInt desired_channels
-) @extern("stbi_loadf_from_callbacks");
+) @cname("stbi_loadf_from_callbacks");
 
-fn float* loadf(ZString filename, CInt* x, CInt* y, CInt* channels_in_file, CInt desired_channels) @extern("stbi_loadf");
+fn float* loadf(ZString filename, CInt* x, CInt* y, CInt* channels_in_file, CInt desired_channels) @cname("stbi_loadf");
 
 fn float* loadf_from_file(
 	File* f,
@@ -123,31 +123,31 @@ fn float* loadf_from_file(
 	CInt* y,
 	CInt* channels_in_file,
 	CInt desired_channels
-) @extern("stbi_loadf_from_file");
+) @cname("stbi_loadf_from_file");
 
-fn void hdr_to_ldr_gamma(float gamma) @extern("stbi_hdr_to_ldr_gamma");
+fn void hdr_to_ldr_gamma(float gamma) @cname("stbi_hdr_to_ldr_gamma");
 
-fn void hdr_to_ldr_scale(float scale) @extern("stbi_hdr_to_ldr_scale");
+fn void hdr_to_ldr_scale(float scale) @cname("stbi_hdr_to_ldr_scale");
 
-fn void ldr_to_hdr_gamma(float gamma) @extern("stbi_ldr_to_hdr_gamma");
+fn void ldr_to_hdr_gamma(float gamma) @cname("stbi_ldr_to_hdr_gamma");
 
-fn void ldr_to_hdr_scale(float scale) @extern("stbi_ldr_to_hdr_scale");
+fn void ldr_to_hdr_scale(float scale) @cname("stbi_ldr_to_hdr_scale");
 
-fn CInt is_hdr_from_callbacks(StbiIoCallbacks* clbk, void* user) @extern("stbi_is_hdr_from_callbacks");
+fn CInt is_hdr_from_callbacks(StbiIoCallbacks* clbk, void* user) @cname("stbi_is_hdr_from_callbacks");
 
-fn CInt is_hdr_from_memory(StbiUc* buffer, CInt len) @extern("stbi_is_hdr_from_memory");
+fn CInt is_hdr_from_memory(StbiUc* buffer, CInt len) @cname("stbi_is_hdr_from_memory");
 
-fn CInt is_hdr(ZString filename) @extern("stbi_is_hdr");
+fn CInt is_hdr(ZString filename) @cname("stbi_is_hdr");
 
-fn CInt is_hdr_from_file(File* f) @extern("stbi_is_hdr_from_file");
+fn CInt is_hdr_from_file(File* f) @cname("stbi_is_hdr_from_file");
 
-fn ZString failure_reason() @extern("stbi_failure_reason");
+fn ZString failure_reason() @cname("stbi_failure_reason");
 
-fn void err(ZString x, ZString y) @extern("stbi__err");
+fn void err(ZString x, ZString y) @cname("stbi__err");
 
-fn void image_free(void* retval_from_stbi_load) @extern("stbi_image_free");
+fn void image_free(void* retval_from_stbi_load) @cname("stbi_image_free");
 
-fn CInt info_from_memory(StbiUc* buffer, CInt len, CInt* x, CInt* y, CInt* comp) @extern("stbi_info_from_memory");
+fn CInt info_from_memory(StbiUc* buffer, CInt len, CInt* x, CInt* y, CInt* comp) @cname("stbi_info_from_memory");
 
 fn CInt info_from_callbacks(
 	StbiIoCallbacks* clbk,
@@ -155,44 +155,44 @@ fn CInt info_from_callbacks(
 	CInt* x,
 	CInt* y,
 	CInt* comp
-) @extern("stbi_info_from_callbacks");
+) @cname("stbi_info_from_callbacks");
 
-fn CInt is_16_bit_from_memory(StbiUc* buffer, CInt len) @extern("stbi_is_16_bit_from_memory");
+fn CInt is_16_bit_from_memory(StbiUc* buffer, CInt len) @cname("stbi_is_16_bit_from_memory");
 
-fn CInt is_16_bit_from_callbacks(StbiIoCallbacks* clbk, void* user) @extern("stbi_is_16_bit_from_callbacks");
+fn CInt is_16_bit_from_callbacks(StbiIoCallbacks* clbk, void* user) @cname("stbi_is_16_bit_from_callbacks");
 
-fn CInt info(ZString filename, CInt* x, CInt* y, CInt* comp) @extern("stbi_info");
+fn CInt info(ZString filename, CInt* x, CInt* y, CInt* comp) @cname("stbi_info");
 
-fn CInt info_from_file(File* f, CInt* x, CInt* y, CInt* comp) @extern("stbi_info_from_file");
+fn CInt info_from_file(File* f, CInt* x, CInt* y, CInt* comp) @cname("stbi_info_from_file");
 
-fn CInt is_16_bit(ZString filename) @extern("stbi_is_16_bit");
+fn CInt is_16_bit(ZString filename) @cname("stbi_is_16_bit");
 
-fn CInt is_16_bit_from_file(File* f) @extern("stbi_is_16_bit_from_file");
+fn CInt is_16_bit_from_file(File* f) @cname("stbi_is_16_bit_from_file");
 
-fn void set_unpremultiply_on_load(CInt flag_true_if_should_unpremultiply) @extern("stbi_set_unpremultiply_on_load");
+fn void set_unpremultiply_on_load(CInt flag_true_if_should_unpremultiply) @cname("stbi_set_unpremultiply_on_load");
 
-fn void convert_iphone_png_to_rgb(CInt flag_true_if_should_convert) @extern("stbi_convert_iphone_png_to_rgb");
+fn void convert_iphone_png_to_rgb(CInt flag_true_if_should_convert) @cname("stbi_convert_iphone_png_to_rgb");
 
-fn void set_flip_vertically_on_load(CInt flag_true_if_should_flip) @extern("stbi_set_flip_vertically_on_load");
+fn void set_flip_vertically_on_load(CInt flag_true_if_should_flip) @cname("stbi_set_flip_vertically_on_load");
 
 fn void set_unpremultiply_on_load_thread(
 	CInt flag_true_if_should_unpremultiply
-) @extern("stbi_set_unpremultiply_on_load_thread");
+) @cname("stbi_set_unpremultiply_on_load_thread");
 
 fn void convert_iphone_png_to_rgb_thread(
 	CInt flag_true_if_should_convert
-) @extern("stbi_convert_iphone_png_to_rgb_thread");
+) @cname("stbi_convert_iphone_png_to_rgb_thread");
 
 fn void set_flip_vertically_on_load_thread(
 	CInt flag_true_if_should_flip
-) @extern("stbi_set_flip_vertically_on_load_thread");
+) @cname("stbi_set_flip_vertically_on_load_thread");
 
 fn ZString zlib_decode_malloc_guesssize(
 	ZString buffer,
 	CInt len,
 	CInt initial_size,
 	CInt* outlen
-) @extern("stbi_zlib_decode_malloc_guesssize");
+) @cname("stbi_zlib_decode_malloc_guesssize");
 
 fn ZString zlib_decode_malloc_guesssize_headerflag(
 	ZString buffer,
@@ -200,21 +200,21 @@ fn ZString zlib_decode_malloc_guesssize_headerflag(
 	CInt initial_size,
 	CInt* outlen,
 	CInt parse_header
-) @extern("stbi_zlib_decode_malloc_guesssize_headerflag");
+) @cname("stbi_zlib_decode_malloc_guesssize_headerflag");
 
-fn ZString zlib_decode_malloc(ZString buffer, CInt len, CInt* outlen) @extern("stbi_zlib_decode_malloc");
+fn ZString zlib_decode_malloc(ZString buffer, CInt len, CInt* outlen) @cname("stbi_zlib_decode_malloc");
 
-fn CInt zlib_decode_buffer(ZString obuffer, CInt olen, ZString ibuffer, CInt ilen) @extern("stbi_zlib_decode_buffer");
+fn CInt zlib_decode_buffer(ZString obuffer, CInt olen, ZString ibuffer, CInt ilen) @cname("stbi_zlib_decode_buffer");
 
 fn ZString zlib_decode_noheader_malloc(
 	ZString buffer,
 	CInt len,
 	CInt* outlen
-) @extern("stbi_zlib_decode_noheader_malloc");
+) @cname("stbi_zlib_decode_noheader_malloc");
 
 fn CInt zlib_decode_noheader_buffer(
 	ZString obuffer,
 	CInt olen,
 	ZString ibuffer,
 	CInt ilen
-) @extern("stbi_zlib_decode_noheader_buffer");
+) @cname("stbi_zlib_decode_noheader_buffer");
