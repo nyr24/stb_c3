@@ -680,14 +680,15 @@ typedef unsigned char validate_uint32[sizeof(stbi__uint32)==4 ? 1 : -1];
 #error "Must define all or none of STBI_MALLOC, STBI_FREE, and STBI_REALLOC (or STBI_REALLOC_SIZED)."
 #endif
 
-extern void* c3_talloc(size_t size);
-extern void* c3_trealloc(void* old_ptr, size_t new_size);
-extern void  c3_tfree(void* ptr);
+// Define c3 allocation functions.
+extern void* stb_alloc_c3(size_t size);
+extern void* stb_realloc_c3(void* old_ptr, size_t new_size);
+extern void  stb_free_c3(void* ptr);
 
 #ifndef STBI_MALLOC
-#define STBI_MALLOC(sz)           c3_talloc(sz)
-#define STBI_REALLOC(p,newsz)     c3_trealloc(p,newsz)
-#define STBI_FREE(p)              c3_tfree(p)
+#define STBI_MALLOC(sz)           stb_alloc_c3(sz)
+#define STBI_REALLOC(p,newsz)     stb_realloc_c3(p,newsz)
+#define STBI_FREE(p)              stb_free_c3(p)
 #endif
 
 #ifndef STBI_REALLOC_SIZED

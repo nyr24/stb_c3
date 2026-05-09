@@ -1,17 +1,17 @@
-// module stb @if($feature(DEFAULT_STB_ALLOC));
-module stb;
+module stb @if(env::DEFAULT_STB_ALLOC);
+import env;
 
-fn void* c3_talloc(usz size) @export("c3_talloc")
+fn void* stb_alloc_c3(sz size) @export("stb_alloc_c3")
 {
 	return mem::tmalloc(size);
 }
 
-fn void* c3_trealloc(void* old_ptr, usz new_size) @export("c3_trealloc")
+fn void* stb_realloc_c3(void* old_ptr, sz new_size) @export("stb_realloc_c3")
 {
 	return mem::trealloc(old_ptr, new_size);
 }
 
-fn void c3_tfree(void* ptr) @export("c3_tfree")
+fn void stb_free_c3(void* ptr) @export("stb_free_c3")
 {
 	return alloc::free(tmem, ptr);
 }
