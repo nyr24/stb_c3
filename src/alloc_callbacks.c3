@@ -1,5 +1,4 @@
-module stb @if(env::DEFAULT_STB_ALLOC);
-import env;
+module stb @if(!std::core::env::CUSTOM_STB_CALLBACKS);
 
 fn void* stb_alloc_c3(sz size) @export("stb_alloc_c3")
 {
